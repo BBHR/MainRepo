@@ -22,6 +22,7 @@ $this->title="BibiHelper";
     <meta name="author" content="">
     <link rel="shortcut icon" href="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="<?= Yii::$app->request->baseUrl; ?>/js/jquery-2.1.4.min.js"></script>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>

@@ -20,7 +20,7 @@ $config = [
                 'yii\web\JqueryAsset' => [
                     'sourcePath' => null,   // не опубликовывать комплект
                     'js' => [
-                        'bibihelper/web/js/jquery-2.1.4.min.js',
+                        '',
                     ]
                 ],
             ],

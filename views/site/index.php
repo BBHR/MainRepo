@@ -50,7 +50,7 @@
 
 <!--            ////////////////////////////////////////////////////////            -->
 
-<!--<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Y4WI9jh6Fj7dr-r6SxZEm540pI18QlK6&width=100%&height=600&lang=ru_RU&sourceType=constructor"></script>-->
+<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Y4WI9jh6Fj7dr-r6SxZEm540pI18QlK6&width=100%&height=600&lang=ru_RU&sourceType=constructor"></script>
 
 <!--                  //////////////////////////////////////////////////////                -->
 <div class="marker">
