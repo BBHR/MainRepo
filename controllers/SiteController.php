@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Users;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -70,12 +71,21 @@ class SiteController extends Controller
 
     public function actionRegistration()
     {
-        /*if (!Yii::$app->user->isGuest) {
+        $this->layout="registr";
+        if (!Yii::$app->user->isGuest) {
             return $this->goHome();
-        }*/
+        }
+        $model=new Users();
+
+        return $this->render('registration',['model'=>$model]);
+    }
 
 
-        return $this->render('registration');
+    public function actionAddcompany(){
+        $this->layout="registr";
+        $model=new Users();
+
+        return $this->render('addcompany',['model'=>$model]);
     }
 
     public function actionLogout()

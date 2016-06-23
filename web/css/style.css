@@ -339,10 +339,10 @@ h2 {
     padding-top: 58px;
     padding-bottom: 29px;
     letter-spacing: 30px;
-    margin-bottom: -166px;
+    /*margin-bottom: -166px;*/
     position: relative;
     z-index: 1;
-    opacity: 0.87;
+    /*opacity: 0.87;*/
     cursor: context-menu;
 }
 .select:hover{

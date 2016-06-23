@@ -37,7 +37,7 @@ $this->title="BibiHelper";
             <div class="col-md-8 col-sm-12 logo-2">
                 <div class="col-md-4 col-sm-4 col-xs-12 info-box1">
                     <div class="add-company">
-                        <a href="">Добавить компанию</a>
+                        <a href="<?= Url::toRoute('site/addcompany') ?>">Добавить компанию</a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 info-box1">
@@ -65,7 +65,7 @@ $this->title="BibiHelper";
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 info-box1">
                     <div class="personal-account">
-                        <a href="#/profile">Личный кабинет</a>
+                        <a href="<?= Url::toRoute('site/login'); ?>">Личный кабинет</a>
                     </div>
                 </div>
                 <div class="col-md-1 col-sm-1 col-xs-12 info-box1 pull-right">
@@ -88,7 +88,7 @@ $this->title="BibiHelper";
         </section>
     </header>
 
-    <main class="main" ng-view>
+    <main class="main">
         <?= $content ?>
     </main>
     <!--                                Footer - Подвал                            -->
@@ -122,7 +122,6 @@ $this->title="BibiHelper";
                     <h6 class="self-room">Личный кабинет</h6>
                     <ul>
                         <li><a href='<?= Url::toRoute('site/login'); ?>'>Вход</a></li>
-                        <li><a href="<?= Url::toRoute('site/registration') ?>">Регистрация</a></li>
                     </ul>
                 </div>
             </div>

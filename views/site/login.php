@@ -6,21 +6,32 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\widgets\Pjax;
+use yii\captcha\Captcha;
+use yii\helpers\Url;
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
+Pjax::begin(['enablePushState' => false]);
 ?>
-<div class="site-login">
+<div class="site-login" style="margin-left: auto; margin-right:auto; width: 500px;margin-bottom: 50px;">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to login:</p>
 
     <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'options' => ['class' => 'form-horizontal'],
+        'enableClientValidation'=>'true',
+        'options' => ['data-pjax' => 1,],
+        'layout' => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
+            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+            'horizontalCssClasses' => [
+                'label' => 'col-sm-3',
+                'offset' => 'col-sm-offset-4',
+                'wrapper' => 'col-sm-8',
+                'error' => '',
+                'hint' => '',
+            ],
         ],
     ]); ?>
 
@@ -41,7 +52,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
+        <!--Если у вас нету аккаунта то можете <a href="<?= Url::toRoute('site/registration') ?>">зарегистрироваться<a>-->
     </div>
 </div>

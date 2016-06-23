@@ -8,24 +8,31 @@ use Yii;
  * This is the model class for table "users".
  *
  * @property integer $idUser
- * @property string $login
- * @property string $password
+ * @property string $auth_key
  * @property string $fname
  * @property string $name
  * @property string $lname
- * @property integer $phoneNumber
- * @property integer $accessId
+ * @property string $email
+ * @property string $hashPassword
+ * @property string $telephone
+ * @property integer $active
+ * @property integer $uroleId
  * @property string $datecreate
  * @property string $lastupdate
- * @property integer $status
  *
- * @property Activate[] $activates
+ * @property Activation[] $activations
+ * @property Company[] $companies
+ * @property UserPictures[] $userPictures
+ * @property UserRole[] $userRoles
+ * @property Visits[] $visits
+ * @property WorkersOfCompany[] $workersOfCompanies
  */
 class Users extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+    const STATUS_BLOCKED = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_WAIT = 2;
+
     public static function tableName()
     {
         return 'users';
@@ -37,12 +44,13 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['login', 'password', 'fname', 'name', 'lname', 'phoneNumber', 'accessId', 'datecreate', 'lastupdate', 'status'], 'required'],
-            [['phoneNumber', 'accessId', 'status'], 'integer'],
+            [['auth_key', 'fname', 'name', 'lname', 'email', 'hashPassword', 'telephone', 'active', 'uroleId', 'datecreate', 'lastupdate'], 'required'],
+            [['active', 'uroleId'], 'integer'],
             [['datecreate', 'lastupdate'], 'safe'],
-            [['login'], 'string', 'max' => 255],
-            [['password'], 'string', 'max' => 256],
+            [['auth_key'], 'string', 'max' => 32],
             [['fname', 'name', 'lname'], 'string', 'max' => 100],
+            [['email', 'hashPassword'], 'string', 'max' => 255],
+            [['telephone'], 'string', 'max' => 20],
         ];
     }
 
@@ -53,24 +61,65 @@ class Users extends \yii\db\ActiveRecord
     {
         return [
             'idUser' => 'Id User',
-            'login' => 'Login',
-            'password' => 'Password',
+            'auth_key' => 'Auth Key',
             'fname' => 'Fname',
             'name' => 'Name',
             'lname' => 'Lname',
-            'phoneNumber' => 'Phone Number',
-            'accessId' => 'Access ID',
+            'email' => 'Email',
+            'hashPassword' => 'Hash Password',
+            'telephone' => 'Telephone',
+            'active' => 'Active',
+            'uroleId' => 'Urole ID',
             'datecreate' => 'Datecreate',
             'lastupdate' => 'Lastupdate',
-            'status' => 'Status',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getActivates()
+    public function getActivations()
     {
-        return $this->hasMany(Activate::className(), ['userId' => 'idUser']);
+        return $this->hasMany(Activation::className(), ['userId' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCompanies()
+    {
+        return $this->hasMany(Company::className(), ['userId' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserPictures()
+    {
+        return $this->hasMany(UserPictures::className(), ['userId' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserRoles()
+    {
+        return $this->hasMany(UserRole::className(), ['userId' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVisits()
+    {
+        return $this->hasMany(Visits::className(), ['userId' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getWorkersOfCompanies()
+    {
+        return $this->hasMany(WorkersOfCompany::className(), ['userId' => 'idUser']);
     }
 }

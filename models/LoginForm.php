@@ -18,7 +18,7 @@ class LoginForm extends Model
     public $rememberMe = true;
 
     private $_user = false;
-
+    private $checkEmail=false;
 
     /**
      * @return array the validation rules.
@@ -28,13 +28,26 @@ class LoginForm extends Model
         return [
             // username and password are both required
             [['username', 'password'], 'required'],
+            ['username', 'required', 'message' => 'Пожалуйста, введите адрес электронной почты'],
+            ['username', 'email', 'message' => 'Невалидный e-mail'],
+            ['username', 'filter', 'filter' => 'trim'],
+            ['username', 'checkEmail'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
+            [['password'], 'string', 'min'=>8, 'max'=>255,],            // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Email',
+            'password' => 'Пароль',
+            'rememberMe' => 'Запомнить',
+            'verifyCode' => 'Введите текст, который видите на картинке',
+        ];
+    }
     /**
      * Validates the password.
      * This method serves as the inline validation for password.
@@ -73,9 +86,18 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Users::find()->where(['email'=>$this->username])->one();
         }
 
         return $this->_user;
     }
+    public function checkEmail(){
+        if ($this->checkEmail === false) {
+            $check=$this->checkEmail = Users::find()->where(['email'=>$this->username,'active'=>Users::STATUS_ACTIVE])->one();
+        }
+        if(!$check){
+            $this->addError('username', 'Такой Email еще не зарегистрирован!');
+        }
+    }
+
 }

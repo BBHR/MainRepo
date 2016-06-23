@@ -30,14 +30,8 @@ class AppAsset extends AssetBundle
         'css/angular-material.min.css',
     ];
     public $js = [
+        'js/jquery-2.1.4.min.js',
         'js/select.js',
-        'js/angular.min.js',
-        'js/angular-route.min.js',
-        'js/angular-animate.min.js',
-        'js/angular-aria.min.js',
-        'js/angular-messages.min.js',
-        'js/angular-material.min.js',
-        'js/all.min.js',
         'js/bootstrap.min.js',
         'js/function.js',
     ];
