@@ -52,6 +52,6 @@ Pjax::begin(['enablePushState' => false]);
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        <!--Если у вас нету аккаунта то можете <a href="<?= Url::toRoute('site/registration') ?>">зарегистрироваться<a>-->
+        Забыли паролья <a href="<?= Url::toRoute('site/resetpass') ?>">Восстановить<a>
     </div>
 </div>

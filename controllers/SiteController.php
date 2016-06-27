@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Registration;
 use app\models\Users;
 use Yii;
 use yii\filters\AccessControl;
@@ -83,7 +84,7 @@ class SiteController extends Controller
 
     public function actionAddcompany(){
         $this->layout="registr";
-        $model=new Users();
+        $model=new Registration();
 
         return $this->render('addcompany',['model'=>$model]);
     }

@@ -34,7 +34,7 @@ class LoginForm extends Model
             ['username', 'checkEmail'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            [['password'], 'string', 'min'=>8, 'max'=>255,],            // password is validated by validatePassword()
+            [['password'], 'string', 'min'=>8, 'max'=>255,'tooShort'=>'Минимальное значения должно быть не менее 8 символов'],            // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
@@ -86,14 +86,14 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = Users::find()->where(['email'=>$this->username])->one();
+            $this->_user = Users::find()->where(['email'=>$this->username,'active'=>User::STATUS_ACTIVE])->one();
         }
 
         return $this->_user;
     }
     public function checkEmail(){
         if ($this->checkEmail === false) {
-            $check=$this->checkEmail = Users::find()->where(['email'=>$this->username,'active'=>Users::STATUS_ACTIVE])->one();
+            $check=$this->checkEmail = Users::find()->where(['email'=>$this->username,'active'=>User::STATUS_ACTIVE])->one();
         }
         if(!$check){
             $this->addError('username', 'Такой Email еще не зарегистрирован!');
