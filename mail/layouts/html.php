@@ -1,16 +1,14 @@
 <?php
 use yii\helpers\Html;
+ use yii\web\Session;
+
  
-/* @var $this yii\web\View */
-/* @var $user app\modules\user\models\User */
- 
-$confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['site/email-confirm', 'activate' => $user]);
+$confirmLink = Yii::$app->urlManager->createAbsoluteUrl(['site/confirm', 'code' =>Yii::$app->session['hash']]);
 ?>
- 
-Здравствуйте!<br>
- 
-Для подтверждения адреса пройдите по ссылке:<br>
- 
-<?= Html::a(Html::encode($confirmLink), $confirmLink) ?><br>
- 
-Если Вы не регистрировались на нашем сайте, то просто удалите это письмо.<br>
+
+<i>Здравствуйте, Администратор СТО – <?=  Yii::$app->session['surname'] ?>! <br> <br>
+Ваша заявка на регистрацию на портале Biihelper подтверждена. <br> <br>
+Для завершения регистрации перейдите по ссылке <a href="<?=$confirmLink ?>">Активация</a> </i>.
+<br>
+<br>
+С уважением, команда Bibihelper, <a href="mailto:<?= Yii::$app->params['adminEmail'] ?>"><?= Yii::$app->params['adminEmail'] ?></a>.

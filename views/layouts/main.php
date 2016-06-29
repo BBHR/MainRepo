@@ -33,7 +33,7 @@ $this->title="BibiHelper";
     <header class="header container">
         <div class="logotype clearfix">
             <div class="col-md-4 col-sm-12 logo">
-                <a href="<?=Url::home()?>"><?=Html::img('../images/logo.jpg', ['alt'=>'lotogip'])?></a>
+                <a href="<?=Url::home()?>"><img src="<?= Yii::$app->request->baseUrl ?>/images/logo.jpg" alt="logotip"></a>
             </div>
             <div class="col-md-8 col-sm-12 logo-2">
                 <div class="col-md-4 col-sm-4 col-xs-12 info-box1">
@@ -91,6 +91,34 @@ $this->title="BibiHelper";
 
     <main class="main">
         <?= $content ?>
+
+       <!-- <div class="modal-overlay" ng-show="showAuthorize" ng-click="hideAuth()" role="button" tabindex="0" aria-hidden="false">
+            <div class="modal-window authorization-window" ng-click="prevent($event)" role="button" tabindex="0">
+                <header class="modal-window-header">
+                    <div class="control-container">
+                        <a class="control-close" ng-click="hideAuth()"> X </a>
+                    </div>
+                    <h1> Вход в личный кабинет </h1>
+                </header>
+                <div class="modal-window-content">
+                    <ul>
+                        <li>
+                            <input type="email" placeholder="e-mail или логин">
+                        </li>
+                        <li>
+                            <input type="password" placeholder="пароль">
+                        </li>
+                        <li>
+                            <a href="#"> Забыли пароль? </a>
+                            <md-checkbox role="checkbox" aria-label="запомнить"><div class="_md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="_md-icon"></div></div><div ng-transclude="" class="_md-label"><span>
+            запомнить
+          </span></div></md-checkbox>
+                        </li>
+                    </ul>
+                    <button class="standard-button" ng-click="hideAuth()"> Сохранить </button> <a href="#">Регистрация</a>
+                </div>
+            </div>
+        </div>-->
     </main>
     <!--                                Footer - Подвал                            -->
 

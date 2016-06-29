@@ -9,30 +9,28 @@ use Yii;
  *
  * @property integer $idUser
  * @property string $auth_key
- * @property string $fname
- * @property string $name
- * @property string $lname
- * @property string $email
- * @property string $hashPassword
- * @property string $telephone
- * @property integer $active
- * @property integer $uroleId
- * @property string $datecreate
- * @property string $lastupdate
+ * @property string $user_surname
+ * @property string $user_name
+ * @property string $user_patronymic
+ * @property string $user_email
+ * @property string $user_password
+ * @property string $user_phone_number
+ * @property integer $user_status
+ * @property string $user_signup_at
+ * @property string $user_lastupdate
  *
  * @property Activation[] $activations
  * @property Company[] $companies
+ * @property Employees[] $employees
  * @property UserPictures[] $userPictures
  * @property UserRole[] $userRoles
  * @property Visits[] $visits
- * @property WorkersOfCompany[] $workersOfCompanies
  */
 class Users extends \yii\db\ActiveRecord
 {
-    const STATUS_BLOCKED = 0;
-    const STATUS_ACTIVE = 1;
-    const STATUS_WAIT = 2;
-
+    /**
+     * @inheritdoc
+     */
     public static function tableName()
     {
         return 'users';
@@ -44,13 +42,14 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['auth_key', 'fname', 'name', 'lname', 'email', 'hashPassword', 'telephone', 'active', 'uroleId', 'datecreate', 'lastupdate'], 'required'],
-            [['active', 'uroleId'], 'integer'],
-            [['datecreate', 'lastupdate'], 'safe'],
+            [['auth_key', 'user_surname', 'user_name', 'user_email', 'user_password', 'user_phone_number', 'user_status', 'user_signup_at', 'user_lastupdate'], 'required'],
+            [['user_status'], 'integer'],
+            [['user_signup_at', 'user_lastupdate'], 'safe'],
             [['auth_key'], 'string', 'max' => 32],
-            [['fname', 'name', 'lname'], 'string', 'max' => 100],
-            [['email', 'hashPassword'], 'string', 'max' => 255],
-            [['telephone'], 'string', 'max' => 20],
+            [['user_surname', 'user_name', 'user_patronymic'], 'string', 'max' => 100],
+            [['user_email', 'user_password'], 'string', 'max' => 255],
+            [['user_phone_number'], 'string', 'max' => 20],
+            [['user_email'], 'unique'],
         ];
     }
 
@@ -62,16 +61,15 @@ class Users extends \yii\db\ActiveRecord
         return [
             'idUser' => 'Id User',
             'auth_key' => 'Auth Key',
-            'fname' => 'Fname',
-            'name' => 'Name',
-            'lname' => 'Lname',
-            'email' => 'Email',
-            'hashPassword' => 'Hash Password',
-            'telephone' => 'Telephone',
-            'active' => 'Active',
-            'uroleId' => 'Urole ID',
-            'datecreate' => 'Datecreate',
-            'lastupdate' => 'Lastupdate',
+            'user_surname' => 'User Surname',
+            'user_name' => 'User Name',
+            'user_patronymic' => 'User Patronymic',
+            'user_email' => 'User Email',
+            'user_password' => 'User Password',
+            'user_phone_number' => 'User Phone Number',
+            'user_status' => 'User Status',
+            'user_signup_at' => 'User Signup At',
+            'user_lastupdate' => 'User Lastupdate',
         ];
     }
 
@@ -88,7 +86,15 @@ class Users extends \yii\db\ActiveRecord
      */
     public function getCompanies()
     {
-        return $this->hasMany(Company::className(), ['userId' => 'idUser']);
+        return $this->hasMany(Company::className(), ['user_id' => 'idUser']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmployees()
+    {
+        return $this->hasMany(Employees::className(), ['user_id' => 'idUser']);
     }
 
     /**
@@ -115,11 +121,4 @@ class Users extends \yii\db\ActiveRecord
         return $this->hasMany(Visits::className(), ['userId' => 'idUser']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getWorkersOfCompanies()
-    {
-        return $this->hasMany(WorkersOfCompany::className(), ['userId' => 'idUser']);
-    }
 }

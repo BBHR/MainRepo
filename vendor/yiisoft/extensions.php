@@ -5,14 +5,23 @@ $vendorDir = dirname(__DIR__);
 return array (
   'yiisoft/yii2-swiftmailer' => 
   array (
-    'name' => 'yiisoft/yii2-swiftmailer',
+    'name' => 'yiisoft/phpmailer',
     'version' => '2.0.5.0',
     'alias' => 
     array (
-      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer',
+      '@yii/swiftmailer' => $vendorDir . '/yiisoft/phpmailer',
     ),
   ),
   'yiisoft/yii2-codeception' => 
+  array (
+    'name' => 'yiisoft/yii2-codeception',
+    'version' => '2.0.5.0',
+    'alias' => 
+    array (
+      '@yii/codeception' => $vendorDir . '/yiisoft/yii2-codeception',
+    ),
+  ),
+  0 => 
   array (
     'name' => 'yiisoft/yii2-codeception',
     'version' => '2.0.5.0',
@@ -55,6 +64,15 @@ return array (
     'alias' => 
     array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
+    ),
+  ),
+  'zyx/zyx-phpmailer' => 
+  array (
+    'name' => 'zyx/zyx-phpmailer',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@zyx/phpmailer' => $vendorDir . '/zyx/zyx-phpmailer',
     ),
   ),
 );

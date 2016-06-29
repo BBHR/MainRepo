@@ -197,7 +197,7 @@ h2 {
 .dropcontainer ul li:hover a {
 	padding: 3px;
 	border: 1px solid #ccc;
-	color: color: #878787;
+	color: #878787;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
@@ -489,7 +489,7 @@ background: -moz-linear-gradient(top,  rgba(222,30,41,1) 0%, rgba(222,30,41,1) 1
 background: -webkit-linear-gradient(top,  rgba(222,30,41,1) 0%,rgba(222,30,41,1) 1%,rgba(219,107,113,0.99) 45%,rgba(222,30,41,0.97) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(222,30,41,1) 0%,rgba(222,30,41,1) 1%,rgba(219,107,113,0.99) 45%,rgba(222,30,41,0.97) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de1e29', endColorstr='#f7de1e29',GradientType=0 ); /* IE6-9 */
-    */
+
 }
 .select-button:hover {
     background: #e4242f;
@@ -830,7 +830,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de1e29', end
 
 footer {
 /*    min-height: 394px;*/
-    min-height: 291px
+    min-height: 291px;
     width: 100%;
     background: #353535;
 }
@@ -953,3 +953,4 @@ footer {
     padding-top: 15px;
     vertical-align: bottom;
 }
+

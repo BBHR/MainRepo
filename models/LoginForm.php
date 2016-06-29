@@ -3,7 +3,9 @@
 namespace app\models;
 
 use Yii;
+use yii\base\Exception;
 use yii\base\Model;
+use yii\db\Expression;
 
 /**
  * LoginForm is the model behind the login form.
@@ -20,6 +22,7 @@ class LoginForm extends Model
     private $_user = false;
     private $checkEmail=false;
 
+    public $verifyCode;
     /**
      * @return array the validation rules.
      */
@@ -36,6 +39,10 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             [['password'], 'string', 'min'=>8, 'max'=>255,'tooShort'=>'Минимальное значения должно быть не менее 8 символов'],            // password is validated by validatePassword()
             ['password', 'validatePassword'],
+
+            [['verifyCode'], 'required', 'when' => function($attribute){return $this->captchaNeeded();},
+                'message' => 'Введите проверочный код'],
+            [['verifyCode'], 'captcha', 'when' => function($attribute){return $this->captchaNeeded();}],
         ];
     }
 
@@ -61,7 +68,21 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Неверный пароль или логин.');
+                Yii::$app->session->set('_try_login', Yii::$app->session->get('_try_login', 0)+1);
+
+            }else{
+                Yii::$app->session->set('_try_login', 0);
+                $users=Users::findOne(['user_email'=>$this->username]);
+                $visits=new Visits();
+                $visits->userId=$users->idUser;
+                $visits->userIp=$_SERVER['REMOTE_ADDR'];
+                $visits->browser=$_SERVER['HTTP_USER_AGENT'];
+                $visits->sessionId=Yii::$app->session->getId();
+                $visits->visit_time=new Expression('NOW()');
+                $visits->last_action=new Expression('NOW()');
+                $visits->status=1;
+                $visits->save(false);
             }
         }
     }
@@ -73,7 +94,7 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
         return false;
     }
@@ -86,18 +107,22 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = Users::find()->where(['email'=>$this->username,'active'=>User::STATUS_ACTIVE])->one();
+            $this->_user = User::findByEmail($this->username);
         }
 
         return $this->_user;
     }
     public function checkEmail(){
         if ($this->checkEmail === false) {
-            $check=$this->checkEmail = Users::find()->where(['email'=>$this->username,'active'=>User::STATUS_ACTIVE])->one();
+            $check=$this->checkEmail = User::findByEmail($this->username);;
         }
         if(!$check){
             $this->addError('username', 'Такой Email еще не зарегистрирован!');
         }
+    }
+
+    public function captchaNeeded(){
+        return Yii::$app->session->get('_try_login', 0) > 4;
     }
 
 }

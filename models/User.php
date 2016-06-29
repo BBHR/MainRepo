@@ -1,14 +1,24 @@
 <?php
 
 namespace app\models;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
+use yii\widgets\ActiveForm;
 
-class User extends \yii\base\Object implements \yii\web\IdentityInterface
+class User extends ActiveRecord implements IdentityInterface
 {
-    public $id;
-    public $username;
-    public $password;
-    public $authKey;
-    public $accessToken;
+    public $idUser;
+    public $auth_key;
+    public $fname;
+    public $name;
+    public $lname;
+    public $email;
+    public $hashPassword;
+    public $telephone;
+    public $active;
+    public $uroleId;
+    public $datecreate;
+    public $lastupdate;
 
     const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 1;
@@ -25,15 +35,17 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['auth_key', 'fname', 'name', 'lname', 'email', 'hashPassword', 'telephone', 'active', 'uroleId', 'datecreate', 'lastupdate'], 'required'],
-            [['active', 'uroleId'], 'integer'],
-            [['datecreate', 'lastupdate'], 'safe'],
+            [['auth_key', 'user_surname', 'user_name', 'user_patronymic', 'user_email', 'user_password', 'user_phone_number', 'user_status', 'user_signup_at', 'user_lastupdate'], 'required'],
+            [['user_status'], 'integer'],
+            [['user_signup_at', 'user_lastupdate'], 'safe'],
             [['auth_key'], 'string', 'max' => 32],
-            [['fname', 'name', 'lname'], 'string', 'max' => 100],
-            [['email', 'hashPassword'], 'string', 'max' => 255],
-            [['telephone'], 'string', 'max' => 20],
+            [['user_surname', 'user_name', 'user_patronymic'], 'string', 'max' => 100],
+            [['user_email', 'user_password'], 'string', 'max' => 255],
+            [['user_phone_number'], 'string', 'max' => 20],
+            [['user_email'], 'unique'],
         ];
     }
+
     public static function findIdentity($id)
     {
         return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
@@ -70,12 +82,17 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         return null;
     }
 
+    public static function findByEmail($email)
+    {
+        return User::findOne(['user_email' => $email, 'user_status' => self::STATUS_ACTIVE]);
+    }
+
     /**
      * @inheritdoc
      */
     public function getId()
     {
-        return $this->id;
+        return $this->idUser;
     }
 
     /**
@@ -83,7 +100,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->authKey;
+        return $this->auth_key;
     }
 
     /**
@@ -91,23 +108,24 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        return $this->authKey === $authKey;
-    }
-
-    /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return boolean if password provided is valid for current user
-     */
-    public function validatePassword($password)
-    {
-        return $this->password === $password;
+        return $this->auth_key === $authKey;
     }
 
     public function setPassword($password)
     {
-        //$this->password_hash = Yii::$app->security->generatePasswordHash($password);
-        $this->user_password = Yii::$app->security->generatePasswordHash($password);
+        $this->user_password = md5(md5($password));
+    }
+
+    public function validatePassword($password)
+    {
+        return $this->user_password === md5(md5($password));
+    }
+
+    public function confirmEmailToken($token){
+        return Activate::find()->where(['hash_activation'=>$token,'status'=>0])->one();
+    }
+
+    public function checkConfirmChangePassword($code){
+        return Activate::find()->where(['hash_activation'=>$code,'status'=>self::STATUS_BLOCKED])->orderBy(['idActivation'=>SORT_DESC])->limit(1)->one();
     }
 }

@@ -79,14 +79,13 @@ $this->title="BibiHelper";
             </div>
 
         </div>
-        <section class="header slogan">
-            <div class="slogan-box">
-                <h1>Заявка на <span>регистрацию СТО</span></h1>
-            </div>
-            <div class="slogan-box">
-                <p>Укажите информацию о СТО - контактные данные. Сведения будут видны посетителям портала BiBiHelper.ru при поиске сервиса</p>
-            </div>
-        </section>
+        <section class="header slogan" ng-include="getHeader()"><div class="slogan-box">
+    <h1>Регистрация <span>нового пользователя</span></h1>
+</div>
+<div class="slogan-box">
+    <p>Укажите контактные данные. Информация будет доступна только администрации портала BiBiHelper.ru</p>
+</div>
+</section>
     </header>
 
     <main class="main">

@@ -1,4 +1,11 @@
 <?php
+    //$baza=$model->getActivations()->orderBy(['idActivation'=>SORT_DESC])->limit(1)->one();
+   // echo $baza->idActivation.' '.$baza->hash_activation;
+//foreach($baza as $baz){
+//    echo $baz->idActivation.' '.$baz->hash_activation.'<br>';
+//}
+
+$i=0;
 
 ?>
 

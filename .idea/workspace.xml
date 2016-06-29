@@ -2,17 +2,251 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b1ab320-446a-4715-8737-8295ecfd5f9f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Registration.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Resetpassword.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/layouts/_footer.php" />
-      <change type="DELETED" beforePath="D:\wamp\www\bibihelper\models\UsersSearch.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Activate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ConfirmEmail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ResetPasswordForm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/site/pages/confirm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mail/emailSender-html.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/layouts/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/layouts/profile.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/user/profile.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/site/resetPassword.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/site/resetPasswordForm.php" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\bibihelper.rar" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e72dd9a6d.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e72f205dc.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e73462d8a.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e73488b0b.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e73489aab.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e73490fdd.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e734913c5.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e73500b5c.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e76bb5297.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e76ce507b.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e773bf0a3.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e773bf48b.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e773c3adc.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e773c9c85.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e773cee8e.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e779ae086.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7820ef83.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7823879d.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7824db7a.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e78259ae5.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7825c1f5.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e782711ea.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7dda0892.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7dedcdb2.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7e4602d4.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7e46aeb6.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7e472bb8.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7e473388.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7e47a0ea.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e7ea730f7.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e8243175d.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e83b7951a.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e8698187b.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e8863ecae.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e8939567a.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e89bda9cb.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e92a47acc.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e936f33d3.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e942ddad4.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9441c171.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e97ba6513.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e97d05b10.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e98aaf50f.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b299a82.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b29d51b.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b2ab7ae.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b2adebf.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b2bdcab.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767e9b2f3047.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767ea36c501a.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767ea37026de.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\runtime\debug\5767ea38aba47.data" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\db\cubrid\ColumnSchemaBuilder.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\db\mysql\ColumnSchemaBuilder.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\db\sqlite\ColumnSchemaBuilder.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\mutex\PgsqlMutex.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_addColumns.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_addForeignKeys.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_createTable.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_dropColumns.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_dropForeignKeys.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_dropTable.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\views\_foreignTables.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\m160313_153426_session_init.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\schema-mssql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\schema-mysql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\schema-oci.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\schema-pgsql.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\vendor\yiisoft\yii2\web\migrations\schema-sqlite.sql" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\create.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\index.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\update.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\OpenServer\domains\localhost\bibihelper\views\users\view.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin" afterPath="$PROJECT_DIR$/runtime/cache/96/963454f612a8b5fb4a63ba1e97f028a1.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ActiveField.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ActiveField.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ActiveForm.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ActiveForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveQuery.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveQueryTrait.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveQueryTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRecord.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRecord.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRecordInterface.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRecordInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRelationTrait.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRelationTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Application.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Application.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Application.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/ArrayCache.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/ArrayCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/AssetController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/AssetController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/AttributeBehavior.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/AttributeBehavior.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/BaseActiveRecord.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/BaseActiveRecord.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseConsole.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseConsole.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseHtml.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseHtml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseHtmlPurifier.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseHtmlPurifier.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseInflector.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseInflector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseJson.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseJson.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/mail/BaseMailer.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/mail/BaseMailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/BaseManager.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/BaseManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseMarkdown.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseMarkdown.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseStringHelper.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseStringHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseUrl.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseUrl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseVarDumper.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseVarDumper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/BaseYii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/BaseYii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/BlameableBehavior.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/BlameableBehavior.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/BooleanValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/BooleanValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/CacheController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/CacheController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/captcha/Captcha.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/captcha/Captcha.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/captcha/CaptchaAction.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/captcha/CaptchaAction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/CheckboxColumn.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/CheckboxColumn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/Column.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/Column.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ColumnSchema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ColumnSchema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ColumnSchemaBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ColumnSchemaBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/ColumnSchemaBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/ColumnSchemaBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Command.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/di/Container.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/di/Container.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Controller.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Controller.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Controller.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/DataColumn.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/DataColumn.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/DateValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/DateValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/DbManager.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/DbManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/DbTarget.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/DbTarget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/Dispatcher.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/Dispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/EachValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/EachValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/ErrorHandler.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/ErrorHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/FileValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/FileValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/FixtureController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/FixtureController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/Formatter.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/Formatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/FragmentCache.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/FragmentCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/GridView.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/grid/GridView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/HelpController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/HelpController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/filters/HttpCache.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/filters/HttpCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/IpValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/IpValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/JsonParser.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/JsonParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ListView.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/ListView.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/LoginForm.php" afterPath="$PROJECT_DIR$/models/LoginForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/mail/MailerInterface.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/mail/MailerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/ManagerInterface.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/ManagerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/MaskedInput.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/MaskedInput.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/MemCache.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/MemCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/Menu.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/Menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/MessageController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/MessageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/MessageFormatter.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/MessageFormatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/MigrateController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/MigrateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Migration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Migration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Model.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Module.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/mutex/Mutex.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/mutex/Mutex.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/NumberValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/NumberValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/data/Pagination.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/data/Pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/PhpManager.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/PhpManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/cubrid/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/cubrid/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mssql/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mssql/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/pgsql/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/pgsql/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryInterface.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Registration.php" afterPath="$PROJECT_DIR$/models/Registration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Request.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Request.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/cubrid/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/cubrid/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mssql/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mssql/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/pgsql/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/pgsql/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/SchemaBuilderTrait.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/SchemaBuilderTrait.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Security.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Security.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/ServeController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/ServeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SiteController.php" afterPath="$PROJECT_DIR$/controllers/SiteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/SyslogTarget.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/SyslogTarget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/TagDependency.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/caching/TagDependency.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/Target.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/log/Target.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/TimestampBehavior.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/TimestampBehavior.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Transaction.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Transaction.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/UPGRADE.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/UPGRADE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UploadedFile.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UploadedFile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UrlManager.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UrlManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UrlRuleInterface.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/UrlRuleInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/UrlValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/UrlValidator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/User.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Users.php" afterPath="$PROJECT_DIR$/models/Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/Validator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/filters/VerbFilter.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/filters/VerbFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/_footer.php" afterPath="$PROJECT_DIR$/views/layouts/_footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/addColumnMigration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/addColumnMigration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/logs/app.log" afterPath="$PROJECT_DIR$/runtime/logs/app.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bibihelper.iml" afterPath="$PROJECT_DIR$/.idea/bibihelper.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/classes.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/classes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/composer.json" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/createJunctionMigration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/createJunctionMigration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/createTableMigration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/createTableMigration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/dropColumnMigration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/dropColumnMigration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/dropTableMigration.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/dropTableMigration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/errorHandler/exception.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/views/errorHandler/exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mail/layouts/html.php" afterPath="$PROJECT_DIR$/mail/layouts/html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/debug/index.data" afterPath="$PROJECT_DIR$/runtime/debug/index.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/login.php" afterPath="$PROJECT_DIR$/views/site/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/rbac/migrations/m140506_102106_rbac_init.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/params.php" afterPath="$PROJECT_DIR$/config/params.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/registr.php" afterPath="$PROJECT_DIR$/views/layouts/registr.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/web.php" afterPath="$PROJECT_DIR$/config/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.activeForm.js" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.activeForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.gridView.js" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.gridView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.js" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/de/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/de/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/es/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/es/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/fa/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/fa/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/hu/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/hu/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/lv/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/lv/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/pt-BR/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/pt-BR/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/th/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/th/yii.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.validation.js" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.validation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/models/ResetPassword.php" afterPath="$PROJECT_DIR$/models/ResetPassword.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/views/site/addcompany.php" afterPath="$PROJECT_DIR$/views/site/addcompany.php" />
+      <change type="MOVED" beforePath="D:\OpenServer\domains\localhost\bibihelper\controllers\UsersController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
     </list>
     <ignored path="bibihelper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,75 +269,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Registration.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bibihelper2/frontend/models/Registration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="12" selection-start="1474" selection-end="1474" vertical-scroll-proportion="-25.5" vertical-offset="0" max-vertical-offset="2176">
-              <folding>
-                <element signature="e#34#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="5" selection-start="2643" selection-end="2643" vertical-scroll-proportion="-11.923077" vertical-offset="1543" max-vertical-offset="2074">
+            <state line="95" column="28" selection-start="2619" selection-end="2619" vertical-scroll-proportion="-7.5384617" vertical-offset="1283" max-vertical-offset="2856">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resetPassword.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/site/resetPassword.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="38" selection-start="706" selection-end="706" vertical-scroll-proportion="0.52509654" vertical-offset="34" max-vertical-offset="697">
               <folding>
-                <element signature="e#35#63#0" expanded="true" />
+                <element signature="e#181#275#0" expanded="true" />
+                <marker date="1467211134300" expanded="true" signature="275:354" placeholder="..." />
+                <marker date="1467211134300" expanded="true" signature="537:591" placeholder="..." />
+                <marker date="1467211134300" expanded="true" signature="728:822" placeholder="..." />
+                <marker date="1467211134300" expanded="true" signature="776:822" placeholder="..." />
+                <marker date="1467211134300" expanded="true" signature="1020:1060" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Registration.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ResetPassword.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/ResetPassword.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="62" selection-start="1260" selection-end="1260" vertical-scroll-proportion="-2.9230769" vertical-offset="706" max-vertical-offset="1258">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="46" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-2.2692308" vertical-offset="604" max-vertical-offset="1972">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Registration.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="66" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.42664093" vertical-offset="476" max-vertical-offset="2108">
-              <folding>
-                <element signature="e#29#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addcompany.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/addcompany.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="50" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-8.153846" vertical-offset="332" max-vertical-offset="1717">
-              <folding>
-                <element signature="e#7#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../bibihelper2/frontend/views/site/registration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="7" selection-end="191" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="901">
-              <folding>
-                <element signature="e#7#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactForm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/ContactForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="32" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-10.038462" vertical-offset="589" max-vertical-offset="1173">
+            <state line="116" column="24" selection-start="4893" selection-end="4893" vertical-scroll-proportion="-12.115385" vertical-offset="1538" max-vertical-offset="2431">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginForm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/LoginForm.php">
+      <file leaf-file-name="passwordResetToken-html.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mail/passwordResetToken-html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="20" selection-start="2916" selection-end="2916" vertical-scroll-proportion="-12.076923" vertical-offset="1318" max-vertical-offset="1836">
+            <state line="8" column="28" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emailSender-html.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mail/emailSender-html.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="4" selection-start="438" selection-end="438" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="340">
+              <folding>
+                <element signature="e#6#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,16 +344,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="51" selection-start="714" selection-end="714" vertical-scroll-proportion="-9.153846" vertical-offset="255" max-vertical-offset="2023">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Resetpassword.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/Resetpassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="204">
+            <state line="37" column="73" selection-start="737" selection-end="755" vertical-scroll-proportion="-6.3461537" vertical-offset="430" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
@@ -144,22 +368,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$USER_HOME$/Downloads/project2016-1-Layout-js/project2016-1-Layout-js/views/reg.html" />
-        <option value="$PROJECT_DIR$/views/site/registration.php" />
-        <option value="$PROJECT_DIR$/models/Users.php" />
-        <option value="$PROJECT_DIR$/config/web.php" />
-        <option value="$PROJECT_DIR$/assets/AppAsset.php" />
-        <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/views/layouts/registr.php" />
-        <option value="$PROJECT_DIR$/views/layouts/_footer.php" />
-        <option value="$PROJECT_DIR$/views/site/login.php" />
-        <option value="$PROJECT_DIR$/models/User.php" />
+        <option value="$PROJECT_DIR$/views/site/index.php" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/models/LoginForm.php" />
-        <option value="$PROJECT_DIR$/../bibihelper2/frontend/views/site/registration.php" />
-        <option value="$PROJECT_DIR$/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/views/site/login.php" />
+        <option value="$PROJECT_DIR$/views/layouts/_footer.php" />
         <option value="$PROJECT_DIR$/views/site/addcompany.php" />
+        <option value="$PROJECT_DIR$/mail/emailSender.php" />
+        <option value="$PROJECT_DIR$/models/Users.php" />
+        <option value="$PROJECT_DIR$/mail/passwordResetToken-html.php" />
+        <option value="$PROJECT_DIR$/models/ResetPassword.php" />
+        <option value="$PROJECT_DIR$/config/web.php" />
         <option value="$PROJECT_DIR$/models/Registration.php" />
+        <option value="$PROJECT_DIR$/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/views/layouts/login.php" />
+        <option value="$PROJECT_DIR$/views/site/resetPassword.php" />
       </list>
     </option>
   </component>
@@ -196,7 +420,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -243,7 +466,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,6 +544,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="mail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bibihelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bibihelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mail" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bibihelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bibihelper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -355,22 +610,25 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../regames" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="last_opened_file_path" value="D:/wamp/www/bibihelper2" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\wamp\www\bibihelper\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp\www\bibihelper\mail\layouts" />
+      <recent name="D:\wamp\www\bibihelper\mail" />
       <recent name="D:\wamp\www\bibihelper\assets" />
     </key>
   </component>
@@ -417,20 +675,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="24" width="1288" height="748" extended-state="6" />
+    <frame x="-4" y="24" width="1288" height="748" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18800648" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22447325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -453,124 +711,130 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/ContactForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="32" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-10.038462" vertical-offset="589" max-vertical-offset="1173">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="50" selection-start="1281" selection-end="1281" vertical-scroll-proportion="-1.542471" vertical-offset="1632" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/LoginForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="20" selection-start="2916" selection-end="2916" vertical-scroll-proportion="-12.076923" vertical-offset="1318" max-vertical-offset="1836">
+        <state line="38" column="35" selection-start="977" selection-end="984" vertical-scroll-proportion="-4.076923" vertical-offset="489" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/login.php">
+    <entry file="file://$PROJECT_DIR$/views/site/addcompany.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="33" selection-start="724" selection-end="724" vertical-scroll-proportion="-0.12806027" vertical-offset="408" max-vertical-offset="1003">
+        <state line="91" column="55" selection-start="4024" selection-end="4024" vertical-scroll-proportion="-12.230769" vertical-offset="1178" max-vertical-offset="1836">
+          <folding>
+            <marker date="1467206079457" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1467206079457" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ConfirmEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="41" selection-start="671" selection-end="671" vertical-scroll-proportion="-5.3846154" vertical-offset="319" max-vertical-offset="952">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bibihelper2/frontend/controllers/SiteController.php">
+    <entry file="file://$PROJECT_DIR$/models/ResetPasswordForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="202" column="40" selection-start="5260" selection-end="5260" vertical-scroll-proportion="0.47490346" vertical-offset="3001" max-vertical-offset="4539">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/widgets/MaskedInput.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="6" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.34942085" vertical-offset="465" max-vertical-offset="3213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="27" selection-start="2740" selection-end="2740" vertical-scroll-proportion="-0.22787194" vertical-offset="1447" max-vertical-offset="4964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bibihelper2/common/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.6891892" vertical-offset="357" max-vertical-offset="3893">
+        <state line="31" column="44" selection-start="808" selection-end="808" vertical-scroll-proportion="-4.730769" vertical-offset="353" max-vertical-offset="1088">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="51" selection-start="714" selection-end="714" vertical-scroll-proportion="-9.153846" vertical-offset="255" max-vertical-offset="2023">
+        <state line="37" column="73" selection-start="737" selection-end="755" vertical-scroll-proportion="-6.3461537" vertical-offset="430" max-vertical-offset="2295">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Resetpassword.php">
+    <entry file="file://$PROJECT_DIR$/models/Users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="549">
+        <state line="44" column="54" selection-start="984" selection-end="984" vertical-scroll-proportion="0.16409266" vertical-offset="663" max-vertical-offset="2210">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bibihelper2/frontend/views/site/registration.php">
+    <entry file="file://$PROJECT_DIR$/mail/layouts/html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="191" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="901">
+        <state line="8" column="40" selection-start="209" selection-end="209" vertical-scroll-proportion="0.22077923" vertical-offset="0" max-vertical-offset="539">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mail/emailSender-html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="438" selection-end="438" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="340">
           <folding>
-            <element signature="e#7#28#0" expanded="true" />
+            <element signature="e#6#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../bibihelper2/frontend/models/Registration.php">
+    <entry file="file://$PROJECT_DIR$/mail/passwordResetToken-html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="12" selection-start="1474" selection-end="1474" vertical-scroll-proportion="-25.5" vertical-offset="0" max-vertical-offset="2176">
+        <state line="8" column="28" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ResetPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="62" selection-start="1260" selection-end="1260" vertical-scroll-proportion="-2.9230769" vertical-offset="706" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="46" selection-start="1191" selection-end="1191" vertical-scroll-proportion="-2.2692308" vertical-offset="604" max-vertical-offset="1972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="24" selection-start="4893" selection-end="4893" vertical-scroll-proportion="-12.115385" vertical-offset="1538" max-vertical-offset="2431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="32" selection-start="1248" selection-end="1426" vertical-scroll-proportion="1.3783784" vertical-offset="0" max-vertical-offset="1241">
           <folding>
-            <element signature="e#34#42#0" expanded="true" />
+            <element signature="e#119#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.34463277" vertical-offset="38" max-vertical-offset="1734">
+          <folding>
+            <element signature="e#66#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="5" selection-start="2643" selection-end="2643" vertical-scroll-proportion="-11.923077" vertical-offset="1543" max-vertical-offset="2074">
-          <folding>
-            <element signature="e#35#63#0" expanded="true" />
-          </folding>
+        <state line="95" column="28" selection-start="2619" selection-end="2619" vertical-scroll-proportion="-7.5384617" vertical-offset="1283" max-vertical-offset="2856">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/addcompany.php">
+    <entry file="file://$PROJECT_DIR$/views/site/resetPassword.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="50" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-8.153846" vertical-offset="332" max-vertical-offset="1717">
+        <state line="20" column="38" selection-start="706" selection-end="706" vertical-scroll-proportion="0.52509654" vertical-offset="34" max-vertical-offset="697">
           <folding>
-            <element signature="e#7#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="66" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.42664093" vertical-offset="476" max-vertical-offset="2108">
-          <folding>
-            <element signature="e#29#37#0" expanded="true" />
+            <element signature="e#181#275#0" expanded="true" />
+            <marker date="1467211134300" expanded="true" signature="275:354" placeholder="..." />
+            <marker date="1467211134300" expanded="true" signature="537:591" placeholder="..." />
+            <marker date="1467211134300" expanded="true" signature="728:822" placeholder="..." />
+            <marker date="1467211134300" expanded="true" signature="776:822" placeholder="..." />
+            <marker date="1467211134300" expanded="true" signature="1020:1060" placeholder="..." />
           </folding>
         </state>
       </provider>

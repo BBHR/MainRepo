@@ -12,6 +12,10 @@ class ComposerStaticInit0fb7274d6961f08116ce84af67e50509
     );
 
     public static $prefixLengthsPsr4 = array (
+        'z' => 
+        array (
+            'zyx\\phpmailer\\' => 14,
+        ),
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
@@ -27,6 +31,10 @@ class ComposerStaticInit0fb7274d6961f08116ce84af67e50509
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'H' => 
+        array (
+            'Html2Text\\' => 10,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -34,6 +42,10 @@ class ComposerStaticInit0fb7274d6961f08116ce84af67e50509
     );
 
     public static $prefixDirsPsr4 = array (
+        'zyx\\phpmailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zyx/zyx-phpmailer',
+        ),
         'yii\\swiftmailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
@@ -70,6 +82,10 @@ class ComposerStaticInit0fb7274d6961f08116ce84af67e50509
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
+        'Html2Text\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/soundasleep/html2text/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -93,12 +109,24 @@ class ComposerStaticInit0fb7274d6961f08116ce84af67e50509
         ),
     );
 
+    public static $classMap = array (
+        'EasyPeasyICS' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
+        'PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
+        'PHPMailerOAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauth.php',
+        'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
+        'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
+        'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
+        'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
+        'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0fb7274d6961f08116ce84af67e50509::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0fb7274d6961f08116ce84af67e50509::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit0fb7274d6961f08116ce84af67e50509::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit0fb7274d6961f08116ce84af67e50509::$classMap;
 
         }, null, ClassLoader::class);
     }

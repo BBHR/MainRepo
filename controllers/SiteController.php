@@ -2,18 +2,19 @@
 
 namespace app\controllers;
 
+use app\models\ConfirmEmail;
 use app\models\Registration;
+use app\models\ResetPassword;
+use app\models\ResetPasswordForm;
 use app\models\Users;
 use Yii;
-use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
 class SiteController extends Controller
 {
-    public function behaviors()
+    /*public function behaviors()
     {
         return [
             'access' => [
@@ -35,7 +36,7 @@ class SiteController extends Controller
             ],
         ];
     }
-
+*/
     public function actions()
     {
         return [
@@ -51,19 +52,17 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $user=Users::find()->where(['idUser'=>13])->one();
+        return $this->render('index',['model'=>$user]);
     }
 
     public function actionLogin()
     {
-        /*if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-        */
-
+        $this->layout='login';
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+
+            return $this->redirect(['user/profile']);
         }
         return $this->render('login', [
             'model' => $model,
@@ -85,8 +84,63 @@ class SiteController extends Controller
     public function actionAddcompany(){
         $this->layout="registr";
         $model=new Registration();
-
+        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+                Yii::$app->session->setFlash('success', 'На указанный адрес электронной почты отправлено письмо. Для завершения регистрации перейдите по ссылке в письме. </br>Если письмо не пришло то проверьте папку Спам.');
+                return $this->refresh();
+        }
         return $this->render('addcompany',['model'=>$model]);
+    }
+
+    public function actionPassreset(){
+
+        $this->layout="login";
+        $model=new ResetPassword();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail()) {
+                Yii::$app->session->setFlash('success', 'На вашу почту отправлена инструкция по восстановлению пароля.');
+
+                return $this->refresh();
+            } else {
+                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+            }
+        }
+     return  $this->render('resetPassword',['model'=>$model]);
+
+    }
+
+    public function actionResetPassword($code)
+    {
+        try {
+            $model = new ResetPasswordForm($code);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+            Yii::$app->session->setFlash('success', 'Новый пароль успешно изменен.');
+
+            return $this->refresh();
+        }
+
+        return $this->render('resetPasswordForm', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionConfirm($code){
+        try {
+            $model = new ConfirmEmail($code);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        if ($model->confirmEmail()) {
+            //Yii::$app->getSession()->setFlash('success', 'Вы успешно зарегистрировались в системе.');
+
+            return $this->redirect(['user/profile']);
+        }
+
+
     }
 
     public function actionLogout()
@@ -104,13 +158,13 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
-        return $this->render('contact', [
+        return $this->render('change', [
             'model' => $model,
         ]);
     }
 
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this->render('pages/confirm');
     }
 }

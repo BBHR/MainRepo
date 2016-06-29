@@ -10,14 +10,13 @@ use yii\widgets\Pjax;
 use yii\captcha\Captcha;
 use yii\helpers\Url;
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = Yii::$app->name.' - Вход';
 Pjax::begin(['enablePushState' => false]);
-?>
-<div class="site-login" style="margin-left: auto; margin-right:auto; width: 500px;margin-bottom: 50px;">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+?>
+<div class="site-login" style="margin-left: auto; margin-right:auto; width: 500px;margin-bottom: 50px; margin-top:20px;">
+
+    <p>Вход в личный кабинет</p>
 
     <?php $form = ActiveForm::begin([
         'enableClientValidation'=>'true',
@@ -40,18 +39,29 @@ Pjax::begin(['enablePushState' => false]);
         <?= $form->field($model, 'password')->passwordInput() ?>
 
         <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+            'template' => "<div class=\"col-lg-offset-1 col-lg-3 _md-container md-ink-ripple\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+            'class'=>'_md-icon',
         ]) ?>
+
+    <?php
+    if(Yii::$app->session->get('_try_login', 0)>4){
+    echo $form->field($model, 'verifyCode')->widget(Captcha::className(),[
+        //'template' => '{image}{input}',
+        'template' => '<div class="row"><div class="col-lg-3">{image}</div>{input}',
+        'imageOptions' => ['title' => 'Обновить', 'style' => 'cursor: pointer;'],
+    ]);
+    }
+    ?>
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <?= Html::submitButton('Вход', ['class' => 'btn btn-danger standard-button', 'name' => 'login-button']) ?>
             </div>
         </div>
 
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        Забыли паролья <a href="<?= Url::toRoute('site/resetpass') ?>">Восстановить<a>
+        Забыли паролья <a href="<?= Url::toRoute('site/passreset') ?>">Восстановить<a>
     </div>
 </div>

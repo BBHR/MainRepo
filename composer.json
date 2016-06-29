@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zyx/zyx-phpmailer": "dev-master"
+    }
+}

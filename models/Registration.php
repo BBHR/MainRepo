@@ -3,8 +3,12 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\Url;
 use yii\base\ErrorException;
 use yii\captcha\Captcha;
+use JPhpMailer;
+use yii\db\Expression;
+use yii\helpers\Html;
 
 class Registration extends Model
 {
@@ -17,6 +21,12 @@ class Registration extends Model
     public $pass2;
     public $verifyCode;
 
+    public $subject="Активация аккаунта";
+    public $body;
+    public $check;
+
+
+
     public function rules()
     {
         return [
@@ -26,20 +36,18 @@ class Registration extends Model
             ['firstName', 'required', 'message' => 'Введите имя'],
             ['firstName', 'match', 'pattern' =>  '/^[а-яё\'-]+$/iu', 'message' => 'Используйте символы русского алфавита, а также символы - и \''],
 
-            ['secondName', 'required', 'message' => 'Введите имя'],
             ['secondName', 'match', 'pattern' =>  '/^[а-яё\'-]+$/iu', 'message' => 'Используйте символы русского алфавита, а также символы - и \''],
 
             ['email', 'required', 'message' => 'Введите email'],
             ['email', 'email', 'message' => 'Невалидный e-mail'],
-            ['email', 'unique', 'message' => 'Пользователь с таким адресом электронной почты уже зарегистрирован',
-            ],
+            ['email', 'checkEmail'],
 
             ['phone', 'required', 'message' => 'Введите номер телефона'],
             ['phone', 'match', 'pattern' => '/\(\d{3}\)-\d{3}-\d{2}-\d{2}/', 'message' => 'Введите номер телефона в формате (ххх)-ххх-хх-хх'],
 
             ['pass', 'required', 'message' => 'Введите пароль'],
             ['pass', 'string', 'min' => 8, 'tooShort' => 'Минимальная длина пароля 8 символов'],
-            ['pass', 'match', 'pattern' => '/([A-Za-zА-Яа-яЁё0-9])(`~!№@#$%^&*()_-+={}[]\|:;"<>,.?)/', 'message' => 'Допускаются комбинации из строчных и прописных русских и английских букв, цифр и спецсимволов'],
+            ['pass', 'match', 'pattern' => '/([A-Za-zА-Яа-яЁё0-9])/', 'message' => 'Допускаются комбинации из строчных и прописных русских и английских букв, цифр и спецсимволов'],
 
             ['pass2', 'required', 'message' => 'Введите подтверждение пароля'],
             ['pass2', 'string', 'min' => 8, 'tooShort' => 'Минимальная длина пароля 8 символов'],
@@ -48,6 +56,7 @@ class Registration extends Model
             [['verifyCode'], 'required',  'message' => 'Требуется ввести текст с картинки выше'],
             [['verifyCode'], 'captcha',  'message' => 'Требуется правильно ввести текст с картинки выше'],
 
+            ['check','required', 'requiredValue' => 1, 'message'=>'Вы не согласны с правилами?'],
         ];
     }
 
@@ -62,6 +71,7 @@ class Registration extends Model
             'pass' => 'Пароль',
             'pass2' => 'Подтвердите пароль',
             'verifyCode' => 'Введите текст с картинки',
+            'check'=>''
         ];
     }
 
@@ -69,51 +79,67 @@ class Registration extends Model
     {
         if ($this->validate())
         {
-            $user = new User();
-            $user->fname = $this->surName;
-            $user->name = $this->firstName;
-            $user->lname = $this->secondName;
-            $user->email = $this->email;
-            $user->telephone = $this->phone;
-            $user->datecreate = new CDbExpression('NOW()');
-            $user->active = User::STATUS_WAIT;
+            $user = new Users();
+            $user->auth_key=Yii::$app->security->generateRandomString();
+            $user->user_surname = $this->surName;
+            $user->user_name = $this->firstName;
+            if(!$this->secondName==="")
+            $user->user_patronymic = $this->secondName;
+            $user->user_email = $this->email;
+            $user->user_phone_number = $this->phone;
+            $user->user_status = User::STATUS_BLOCKED;
+            $user->user_signup_at= new Expression('NOW()');
+            $user->user_lastupdate = new Expression('NOW()');
+            $user->user_password=md5(md5($this->pass));
 
-            $user->setPassword($this->pass);
-            $user->generateAuthKey();
-            $user->generateEmailConfirmToken();
-
-            if ($user->save(false))
+            if ($user->save())
             {
                 //Yii::$app->session->setFlash('success', 'На указанный адрес электронной почты отправлено письмо. Для завершения регистрации перейдите по ссылке в письме.');
                 //return true;
                 try
                 {
-                    $role = new UserRole();
-                    $role->user_id = $user->user_id;
-                    $role->role_id = 1; ///////////////////////////////////////////////////////////
-                    $role->date = time();
+                    $hash_generated=Yii::$app->security->generateRandomString();
+
+                    $role = new Activate();
+                    $role->userId = $user->idUser;
+                    $role->hash_activation = $hash_generated; ///////////////////////////////////////////////////////////
+                    $role->typeActivation = Activate::TYPE_EMAIL;
+                    $role->datecreate=new Expression('NOW()');
+                    $role->status=User::STATUS_BLOCKED;
                     $role->save();
 
-
-                    Yii::$app->mailer->compose('emailConfirm', ['user' => $user])
-                        ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
+                    Yii::$app->session['hash']=$role->hash_activation;
+                    Yii::$app->session['surname']=$this->surName;
+                    Yii::$app->mailer->compose(['html'=>'emailSender-html','text'=>'emailSender-text'])
+                        ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name])
                         ->setTo($this->email)
                         ->setSubject('Автосервис - Подтверждение регистрации')
+                        ->setHtmlBody($this->body)
                         ->send();
-                    //Yii::$app->session->setFlash('success', 'На указанный адрес электронной почты отправлено письмо. Для завершения регистрации перейдите по ссылке в письме.');
+
+                    return true;
+
                 }
                 catch (Exception $e)
                 {
-                    Yii::$app->session->setFlash('error', 'Что то не срослось');
+                    Yii::$app->session->setFlash('success', 'Что то не срослось');
                     return false;
                 }
             }
             else
             {
-                Yii::$app->session->setFlash('error', 'Возникли проблемы с записью в БД');
+                Yii::$app->session->setFlash('success', 'Возникли проблемы с записью в БД');
             }
             return true;
         }
-        return null;
+        //return null;
+    }
+
+    public function checkEmail(){
+         $check=Users::find()->where(['user_email'=>$this->email])->one();
+
+        if($check){
+            $this->addError('email', 'Такой Email зарегистрирован!');
+        }
     }
 }

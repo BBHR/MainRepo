@@ -4,9 +4,16 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\widgets\MaskedInput;
 use yii\captcha\Captcha;
-use yii\widgets\Pjax;
-Pjax::begin(['enablePushState' => false]);
 ?>
+<?php if (Yii::$app->session->hasFlash('success')): ?>
+    <section class='reg-info-block'>
+    <div class='info-block-data'>
+    <div class="alert alert-success">
+        <?= Yii::$app->session->getFlash('success'); ?>
+    </div>
+    </div>
+    </section>
+    <?php else: ?>
 <!-- Контактная информация -->
 <section class='reg-info-block'>
     <div class='info-block-data'>
@@ -21,23 +28,23 @@ Pjax::begin(['enablePushState' => false]);
                'horizontalCssClasses' => [
                    'label' => 'col-sm-3',
                    'offset' => 'col-sm-offset-4',
-                   'wrapper' => 'col-sm-8',
+                   'wrapper' => 'data-row',
                    'error' => '',
                    'hint' => '',
                ],
            ],
        ]);
-       echo $form->field($model, 'surName')->textInput(['maxlength' => 100, 'autofocus' => 'on', 'class' => 'form-control t-i']);
-       echo $form->field($model, 'firstName')->textInput(['maxlength' => 100,]);
-       echo $form->field($model, 'secondName')->textInput(['maxlength' => 100,]);
-       echo $form->field($model, 'email')->input('email');
-       echo $form->field($model, 'phone')->widget(MaskedInput::classname(), ['mask' => '+7 (999)-999-99-99', 'type' => 'tel']);
-       echo $form->field($model, 'pass')->passwordInput(['maxlength' => 32]);
-       echo $form->field($model, 'pass2')->passwordInput(['maxlength' => 32]);
+       echo $form->field($model, 'surName')->textInput(['maxlength' => 100, 'autofocus' => 'on', 'class' => 'input-long']);
+       echo $form->field($model, 'firstName')->textInput(['maxlength' => 100, 'autofocus' => 'on', 'class' => 'input-long']);
+       echo $form->field($model, 'secondName')->textInput(['maxlength' => 100, 'autofocus' => 'on', 'class' => 'input-long']);
+       echo $form->field($model, 'email')->input('email')->textInput(['autofocus' => 'on', 'class' => 'input-long']);
+       echo $form->field($model, 'phone')->widget(MaskedInput::classname(), ['mask' => '+7 (999)-999-99-99', 'type' => 'tel'])->textInput(['class' => 'input-long']);
+       echo $form->field($model, 'pass')->passwordInput(['maxlength' => 32, 'autofocus' => 'on', 'class' => 'input-long']);
+       echo $form->field($model, 'pass2')->passwordInput(['maxlength' => 32, 'autofocus' => 'on', 'class' => 'input-long']);
 
        echo $form->field($model, 'verifyCode')->widget(Captcha::className(),[
            //'template' => '{image}{input}',
-           'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-9">{input}</div></div>',
+           'template' => '<div class="row"><div class="col-lg-3">{image}</div>{input}',
            'imageOptions' => ['title' => 'Обновить', 'style' => 'cursor: pointer;'],
        ]);
 ?>
@@ -78,9 +85,13 @@ Pjax::begin(['enablePushState' => false]);
 <section class='reg-info-block'>
     <div class='info-block-data'>
         <div class='checkbox-row'>
-            <input type='checkbox'>
-            <label> С <a href='#'> Условиями использования</a> сервиса и <a href='#'> Политикой конфиденциальности</a> ознакомлен. Даю согласие на обработку персональных данных.
-            </label>
+            <?php
+            echo $form->field($model, 'check')->checkbox([
+                'template' => "<div class=\" _md-container md-ink-ripple\">{input} <label> С <a href='#'> Условиями использования</a> сервиса и <a href='#'> Политикой конфиденциальности</a> ознакомлен. Даю согласие на обработку персональных данных.
+            </label></div>\n\n<div class=\"col-lg-8\">{error}</div>",
+                'class'=>'_md-icon','autofocus' => 'on']);
+            ?>
+
         </div>
         <div class='button-row'>
             <?php
@@ -89,8 +100,7 @@ Pjax::begin(['enablePushState' => false]);
         </div>
     </div>
 </section>
--->
 <?php
 ActiveForm::end();
-Pjax::end();
 ?>
+<?php endif; ?>
