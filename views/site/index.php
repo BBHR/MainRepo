@@ -1,5 +1,5 @@
 <?php
-
+var_dump(mail("pycmuk2013@yandex.ru", "dfdf", 'dfdfdfdfdfdf'));
 ?>
 
 <div class="select">

@@ -86,14 +86,14 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = Users::find()->where(['email'=>$this->username])->one();
+            $this->_user = Users::find()->where(['user_email'=>$this->username])->one();
         }
 
         return $this->_user;
     }
     public function checkEmail(){
         if ($this->checkEmail === false) {
-            $check=$this->checkEmail = Users::find()->where(['email'=>$this->username,'active'=>Users::STATUS_ACTIVE])->one();
+            $check=$this->checkEmail = Users::find()->where(['user_email'=>$this->username,'user_status'=>Users::STATUS_ACTIVE])->one();
         }
         if(!$check){
             $this->addError('username', 'Такой Email еще не зарегистрирован!');

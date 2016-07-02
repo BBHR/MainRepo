@@ -55,11 +55,10 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
-        /*if (!Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        */
-
+        
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -71,7 +70,7 @@ class SiteController extends Controller
 
     public function actionRegistration()
     {
-        $this->layout="registr";
+        //$this->layout="registr";
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -80,6 +79,29 @@ class SiteController extends Controller
         return $this->render('registration',['model'=>$model]);
     }
 
+    public function actionReguser() {
+        $model = new Users();
+        return $this->render('reguser', ['model' => $model]);
+    }
+    
+    public function actionRegservice() {
+        $model = new Users();
+        if ($model->load(Yii::$app->request->post())) {
+            $post = Yii::$app->request->post()['Users'];
+            $model->user_signup_at = date("Y-m-d H:i:s", time());
+            $model->user_signin_at = date("Y-m-d H:i:s", time());
+            //$model->user_status = Users::STATUS_BLOCKED;
+            $model->user_status = Users::STATUS_ACTIVE;
+            $model->user_name = $post['user_name'];
+            $model->user_password = $post['user_password'];
+            $model->user_phone_number = $post['user_phone_number'];
+            $model->user_surname = $post['user_surname'];
+            $model->user_patronymic = $post['user_patronymic'];
+            if ($model->save())
+                return $this->goHome();
+        }
+        return $this->render('regservice', ['model' => $model]); 
+    }
 
     public function actionAddcompany(){
         $this->layout="registr";
