@@ -13,7 +13,7 @@ use app\assets\AppAsset;
 AppAsset::register($this);
 $this->title = "BibiHelper";
 ?>
-<?php $this->beginPage() ?>
+<?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
     <head>
@@ -38,7 +38,7 @@ $this->title = "BibiHelper";
                     <div class="col-md-8 col-sm-12 logo-2">
                         <div class="col-md-4 col-sm-4 col-xs-12 info-box1">
                             <div class="add-company">
-                                <a href="<?= Url::toRoute('site/addcompany') ?>">Добавить компанию</a>
+                                <a href="<?= Url::toRoute('site/regservice') ?>">Добавить компанию</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12 info-box1">
@@ -78,9 +78,9 @@ $this->title = "BibiHelper";
                                     <a href='#'>Предложение разработчикам</a>
                                     <div class='hidden-menu-footer'>
                                         <?php if(Yii::$app->user->isGuest) : ?>
-                                        <a href='/site/login'>Вход</a>
+                                        <a href='<?= Url::toRoute('site/login'); ?>'>Вход</a>
                                         <?php else : ?>
-                                        <a href='/site/logout'>Выход</a>
+                                        <a href='<?= Url::toRoute('site/logout'); ?>' data-method="post">Выход</a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -93,11 +93,19 @@ $this->title = "BibiHelper";
                 <?php if (substr($this->context->module->requestedAction->id, 0, 3) != 'reg') : ?>
                     <?= $this->render('_main_header');?>
                 <?php else : ?>
-                    <?= $this->render('_register_header')?>
+                    <?= $this->render('_register_header', ['id' => $this->context->module->requestedAction->id])?>
                 <?php endif; ?>
                 </section>
             </header>
-
+            <?php if (Yii::$app->session->hasFlash("reg_done")) : ?>
+            <div class="main text-center">
+                <div class="row">
+                    <div class="col-md-12 bg-info" style="padding:5px;">
+                    <h2><?= Yii::$app->session->getFlash("reg_done"); ?></h2>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
             <main class="main">
                 <?= $content ?>
             </main>
@@ -116,8 +124,8 @@ $this->title = "BibiHelper";
                             </ul>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-6 footer-content">
-                            <h6>Автовладельцам</h6>
                             <!--
+                            <h6>Автовладельцам</h6>
                             <ul>
                                 <li><a href="">Поиск</a></li>
                                 <li><a href="">Расширенный поиск</a></li>
@@ -125,13 +133,13 @@ $this->title = "BibiHelper";
 
                             </ul>
                             -->
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-6 footer-content">
                             <h6>Компаниям</h6>
                             <ul>
                                 <li><a href="">Добавить компанию</a></li>
                             </ul>
-                            <h6 class="self-room">Личный кабинет</h6>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6 footer-content">
+                            <h6 class="">Личный кабинет</h6><!-- self-room -->
                             <ul>
                                 <?php if (Yii::$app->user->isGuest) : ?>
                                     <li><a href='<?= Url::toRoute('site/login'); ?>'>Вход</a></li>

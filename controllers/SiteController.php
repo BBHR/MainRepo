@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Mail;
 
 class SiteController extends Controller
 {
@@ -59,13 +60,32 @@ class SiteController extends Controller
             return $this->goHome();
         }
         
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        $key = isset($_GET['key']) ? $_GET['key'] : null;
+        
+        if ($key) {
+            $model = Users::findOne(['auth_key' => $key]);
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        
+        if ($model) {
+            $model->user_status = Users::STATUS_ACTIVE;
+            $model->auth_key = "";
+            if (Yii::$app->user->login($model)) {
+                return $this->goBack();
+            }
+            else {
+                throw new \yii\authclient\InvalidResponseException("Не удалось авторизоваться", "Попробуйте еще раз");
+            }
+        }
+        else {
+            $model = new LoginForm();
+            if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                return $this->goBack();
+            }
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
+        
     }
 
     public function actionRegistration()
@@ -90,15 +110,27 @@ class SiteController extends Controller
             $post = Yii::$app->request->post()['Users'];
             $model->user_signup_at = date("Y-m-d H:i:s", time());
             $model->user_signin_at = date("Y-m-d H:i:s", time());
-            //$model->user_status = Users::STATUS_BLOCKED;
-            $model->user_status = Users::STATUS_ACTIVE;
+            $model->user_status = Users::STATUS_BLOCKED;
             $model->user_name = $post['user_name'];
             $model->user_password = $post['user_password'];
             $model->user_phone_number = $post['user_phone_number'];
             $model->user_surname = $post['user_surname'];
             $model->user_patronymic = $post['user_patronymic'];
-            if ($model->save())
+            $model->auth_key = $model->getAuthKey();
+            if ($model->save()) {
+                $url = Yii::$app->urlManager->createAbsoluteUrl("/site/login?key={$model->auth_key}");
+                $mail = new Mail();
+                $mail->setMessage("Здравствуйте, <Администратор СТО – {$model->user_surname}>!<br>
+Ваша заявка на регистрацию на портале Bibihelper подтверждена.<br>
+Для завершения регистрации перейдите по ссылке {$url}.<br>
+С уважением, команда Bibihelper, support@bibihelper.com.
+")->setSubject("Регистрация на портале Biihelper");
+                $mail->setTo($model->user_email);
+                $mail->setFrom("support@bibihelper.com");
+                $mail->send();
+                Yii::$app->session->setFlash("reg_done", "На вашу электронную почту отправлено письмо для завершения регистрации!");
                 return $this->goHome();
+            }
         }
         return $this->render('regservice', ['model' => $model]); 
     }

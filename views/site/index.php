@@ -1,46 +1,48 @@
-<?php
-var_dump(mail("pycmuk2013@yandex.ru", "dfdf", 'dfdfdfdfdfdf'));
-?>
-
 <div class="select">
-
-    <div class="select-box">
-        <div class="select-box1">
-            <form action="#">
-                <select class="turnintodropdown select-avto">
-                    <option value="">Марка автомобиля</option>
-                    <option value="">Acura</option>
-                    <option value="">Alfa Romeo</option>
-                    <option value="">Aston Martin</option>
-                    <option value="">Audi</option>
-                    <option value="">BMW</option>
-                    <option value="">BYD</option>
-                    <option value="">Bentley</option>
-                    <option value="">Cadillac</option>
-                    <option value="">Changan</option>
-                    <option value="">Chery</option>
-                    <option value="">Chevrolet</option>
-                    <option value="">Chrysler</option>
-                    <option value="">Citroen</option>
-                </select>
-                <span class="select-cursor">&#8250;</span>
-            </form>
-        </div>
-    </div>
-    <div class="select-box">
-        <div class="select-box1">
-            <form action="#">
-                <select class="turnintodropdown select-work">
-                    <option value="">Вид работ</option>
-                    <option value="">Рихтовка</option>
-                    <option value="">Балансировка</option>
-                    <option value="">Электрика</option>
-                    <option value="">Покраска</option>
-                </select>
-                <span class="select-cursor">&#8250;</span>
-            </form>
-        </div>
-    </div>
+    <select-box items="marks" placeholder="Выберите марку" ng-click="focus()" role="button" tabindex="0">  <span class="item-title">Выберите марку</span>
+        <span class="arrow"></span>
+        <ul>
+            <!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Alfa Romeo</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Aston Martin</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Audi</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">BMW</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">BYD</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Bentley</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Cadillac</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Changan</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Chery</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Chevrolet</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Chrysler</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Citroen</a>
+            </li><!---->
+        </ul>
+    </select-box>
+    <select-box items="workTypes" placeholder="Вид работ" ng-click="focus()" role="button" tabindex="0">  <span class="item-title">Вид работ</span>
+        <span class="arrow"></span>
+        <ul>
+            <!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Рехтовка</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Балансировка</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Электрика</a>
+            </li><!----><li ng-repeat="item in items" class="">
+                <a ng-click="select(item)">Покраска</a>
+            </li><!---->
+        </ul>
+    </select-box>
     <div class="select-box">
         <input class="select-button" type="button" value="Найти">
         <a href="#">Расширенный поиск</a>
@@ -50,9 +52,10 @@ var_dump(mail("pycmuk2013@yandex.ru", "dfdf", 'dfdfdfdfdfdf'));
 
 <!--            ////////////////////////////////////////////////////////            -->
 
-<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Y4WI9jh6Fj7dr-r6SxZEm540pI18QlK6&width=100%&height=600&lang=ru_RU&sourceType=constructor"></script>
+<!--<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Y4WI9jh6Fj7dr-r6SxZEm540pI18QlK6&width=100%&height=600&lang=ru_RU&sourceType=constructor"></script>-->
 
 <!--                  //////////////////////////////////////////////////////                -->
+<!--
 <div class="marker">
     <div class="marker-box1 clearfix">
         <ul class="clearfix">
@@ -71,6 +74,7 @@ var_dump(mail("pycmuk2013@yandex.ru", "dfdf", 'dfdfdfdfdfdf'));
         </ul>
     </div>
 </div>
+-->
 <section class="instruction">
     <div class="instruction-box1">
         <h2>Как это <span>работает</span>!</h2>
