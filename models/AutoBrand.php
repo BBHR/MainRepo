@@ -9,7 +9,12 @@
 namespace app\models;
 
 
-class AutoBrand
-{
+use yii\db\ActiveRecord;
 
+class AutoBrand extends ActiveRecord
+{
+    public static function tableName()
+    {
+        return 'auto_brands';
+    }
 }

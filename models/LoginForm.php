@@ -59,7 +59,6 @@ class LoginForm extends Model
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
-
             if (!$user || !$user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
@@ -73,7 +72,7 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+            return Yii::$app->user->login($this->getUser(), 3600*24*30);//$this->rememberMe ? 3600*24*30 : 0
         }
         return false;
     }
@@ -86,14 +85,14 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = Users::find()->where(['user_email'=>$this->username])->one();
+            $this->_user = User::find()->where(['user_email'=>$this->username])->one();
         }
-
         return $this->_user;
     }
     public function checkEmail(){
+        $check = false;
         if ($this->checkEmail === false) {
-            $check=$this->checkEmail = Users::find()->where(['user_email'=>$this->username,'user_status'=>Users::STATUS_ACTIVE])->one();
+            $check=$this->checkEmail = User::find()->where(['user_email'=>$this->username,'user_status'=>User::STATUS_ACTIVE])->one();
         }
         if(!$check){
             $this->addError('username', 'Такой Email еще не зарегистрирован!');

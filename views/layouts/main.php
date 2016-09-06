@@ -89,6 +89,15 @@ $this->title = "BibiHelper";
                     </div>
 
                 </div>
+                <?php if (Yii::$app->session->hasFlash("reg_done")) : ?>
+                <div class="main text-center">
+                    <div class="row">
+                        <div class="col-md-12 bg-info" style="padding:5px;">
+                        <h2><?= Yii::$app->session->getFlash("reg_done"); ?></h2>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
                 <section class="header slogan">
                 <?php if (substr($this->context->module->requestedAction->id, 0, 3) != 'reg') : ?>
                     <?= $this->render('_main_header');?>
@@ -97,15 +106,7 @@ $this->title = "BibiHelper";
                 <?php endif; ?>
                 </section>
             </header>
-            <?php if (Yii::$app->session->hasFlash("reg_done")) : ?>
-            <div class="main text-center">
-                <div class="row">
-                    <div class="col-md-12 bg-info" style="padding:5px;">
-                    <h2><?= Yii::$app->session->getFlash("reg_done"); ?></h2>
-                    </div>
-                </div>
-            </div>
-            <?php endif; ?>
+            
             <main class="main">
                 <?= $content ?>
             </main>
@@ -143,7 +144,7 @@ $this->title = "BibiHelper";
                             <ul>
                                 <?php if (Yii::$app->user->isGuest) : ?>
                                     <li><a href='<?= Url::toRoute('site/login'); ?>'>Вход</a></li>
-                                    <li><?= Html::a("Регистрация", Url::toRoute("/site/registration"))?></li>
+                                    <li><?php //= Html::a("Регистрация", Url::toRoute("/site/registration"))?></li>
                                 <?php else : ?>
                                     <li><a href='<?= Url::toRoute('site/logout'); ?>' data-method="post">Выход</a></li>
                                 <?php endif; ?>
@@ -176,9 +177,9 @@ $this->title = "BibiHelper";
             <?php 
                     Modal::begin([
                         'id' => 'modal',
-                        'header' => '<h2>Вопросы</h2>',
+                        'header' => "<div class='text-center'>Здравствуйте, уважаемый гость!</div>"
                     ]); 
-                    echo "Здравствуйте, уважаемый гость! Мы работаем над реализацией этой функции. Совсем скоро она будет доступна!";
+                    echo "Мы работаем над реализацией этой функции. Совсем скоро она будет доступна!";
                     Modal::end();
                 
                 ?>
